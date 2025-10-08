@@ -24,6 +24,39 @@
       }
     },
     {
+      "id": "aeroway_area",
+      "type": "fill",
+      "source": "openmaptiles",
+      "source-layer": "aeroway",
+      "filter": ["==", ["get", "type"], "aerodrome"],
+      "paint": {
+        "fill-color": "#2e486d",
+        "fill-opacity": 0.9
+      }
+    },
+    {
+      "id": "runway",
+      "type": "line",
+      "source": "openmaptiles",
+      "source-layer": "aeroway",
+      "filter": ["==", ["get", "class"], "runway"],
+      "paint": {
+        "line-color": "#193050",
+        "line-width": ["interpolate", ["linear"], ["zoom"], 10, 1, 15, 6]
+      }
+    },
+    {
+      "id": "taxiway",
+      "type": "line",
+      "source": "openmaptiles",
+      "source-layer": "aeroway",
+      "filter": ["==", ["get", "class"], "taxiway"],
+      "paint": {
+        "line-color": "#193050",
+        "line-width": ["interpolate", ["linear"], ["zoom"], 13, 0.4, 18, 2]
+      }
+    },
+    {
       "id": "park",
       "type": "fill",
       "source": "openmaptiles",
