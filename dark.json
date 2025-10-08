@@ -20,7 +20,7 @@
       "source": "ne2_shaded",
       "maxzoom": 7,
       "paint": {
-        "raster-opacity": ["interpolate", ["exponential", 1.5], ["zoom"], 0, 0.35, 6, 0.05]
+        "raster-opacity": 0
       }
     },
     {
