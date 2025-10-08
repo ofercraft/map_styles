@@ -171,9 +171,13 @@
       "type": "line",
       "source": "openmaptiles",
       "source-layer": "boundary",
-      "filter": ["==", ["get", "admin_level"], 2],
+      "filter": [
+        "all",
+        ["==", ["get", "admin_level"], 2],
+        ["!=", ["get", "maritime"], 1]
+      ],
       "paint": {
-        "line-color": "#a0a7ba",
+        "line-color": "#6f7688",
         "line-width": ["interpolate", ["linear"], ["zoom"], 3, 0.5, 10, 2]
       }
     },
