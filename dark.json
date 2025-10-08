@@ -99,7 +99,28 @@
         "line-opacity": 0
       }
     },
-
+    {
+      "id": "aeroway_ref",
+      "type": "symbol",
+      "source": "openmaptiles",
+      "source-layer": "aeroway",
+      "minzoom": 12,
+      "maxzoom": 17,
+      "filter": ["has", "ref"],
+      "layout": {
+        "text-field": ["get", "ref"],
+        "text-font": ["Noto Sans Bold"],
+        "text-size": ["interpolate", ["linear"], ["zoom"], 12, 9, 15, 13],
+        "text-allow-overlap": false,
+        "text-ignore-placement": false,
+        "symbol-placement": "point"
+      },
+      "paint": {
+        "text-color": "#cfd4da",
+        "text-halo-color": "#2f354b",
+        "text-halo-width": 1
+      }
+    },
     {
       "id": "aeroway_fill",
       "type": "fill",
