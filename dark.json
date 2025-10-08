@@ -108,17 +108,15 @@
       "filter": [
         "in",
         ["get", "class"],
-        ["aerodrome", "apron", "heliport", "helipad", "gate"]
+        ["aerodrome", "heliport", "helipad"]
       ],
       "paint": {
         "fill-color": [
           "match",
           ["get", "class"],
           "aerodrome", "#343a4f",
-          "apron", "#3b4259",
           "heliport", "#3b4259",
           "helipad", "#3b4259",
-          "gate", "#3b4259",
           "#2f354b"
         ],
         "fill-opacity": 0.9
