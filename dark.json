@@ -18,7 +18,7 @@
     {
       "id": "background",
       "type": "background",
-      "paint": { "background-color": "#1b1b1b" }
+      "paint": { "background-color": "#202123" }
     },
     {
       "id": "natural_earth",
@@ -26,7 +26,7 @@
       "source": "ne2_shaded",
       "maxzoom": 7,
       "paint": {
-        "raster-opacity": ["interpolate", ["exponential", 1.5], ["zoom"], 0, 0.5, 6, 0.15]
+        "raster-opacity": ["interpolate", ["exponential", 1.5], ["zoom"], 0, 0.35, 6, 0.05]
       }
     },
     {
@@ -35,9 +35,8 @@
       "source": "openmaptiles",
       "source-layer": "park",
       "paint": {
-        "fill-color": "#324d34",
-        "fill-opacity": 0.6,
-        "fill-outline-color": "#4f7a50"
+        "fill-color": "#263c2c",
+        "fill-opacity": 0.6
       }
     },
     {
@@ -47,17 +46,9 @@
       "source-layer": "landuse",
       "filter": ["==", ["get", "class"], "residential"],
       "paint": {
-        "fill-color": ["interpolate", ["linear"], ["zoom"], 9, "#2a2a2a", 12, "#383838"],
+        "fill-color": "#1f1f1f",
         "fill-opacity": 0.6
       }
-    },
-    {
-      "id": "landcover_grass",
-      "type": "fill",
-      "source": "openmaptiles",
-      "source-layer": "landcover",
-      "filter": ["==", ["get", "class"], "grass"],
-      "paint": { "fill-color": "#2e402c", "fill-opacity": 0.4 }
     },
     {
       "id": "landcover_wood",
@@ -65,21 +56,33 @@
       "source": "openmaptiles",
       "source-layer": "landcover",
       "filter": ["==", ["get", "class"], "wood"],
-      "paint": { "fill-color": "#213523", "fill-opacity": 0.5 }
+      "paint": { "fill-color": "#1d3522", "fill-opacity": 0.5 }
+    },
+    {
+      "id": "landcover_grass",
+      "type": "fill",
+      "source": "openmaptiles",
+      "source-layer": "landcover",
+      "filter": ["==", ["get", "class"], "grass"],
+      "paint": { "fill-color": "#213829", "fill-opacity": 0.5 }
     },
     {
       "id": "water",
       "type": "fill",
       "source": "openmaptiles",
       "source-layer": "water",
-      "paint": { "fill-color": "#1d283a" }
+      "paint": { "fill-color": "#0e1626" }
     },
     {
-      "id": "aeroway_fill",
+      "id": "building",
       "type": "fill",
       "source": "openmaptiles",
-      "source-layer": "aeroway",
-      "paint": { "fill-color": "#2d2d2d", "fill-opacity": 0.6 }
+      "source-layer": "building",
+      "minzoom": 13,
+      "paint": {
+        "fill-color": "#2a2b2d",
+        "fill-outline-color": "#3a3b3d"
+      }
     },
     {
       "id": "road_motorway",
@@ -88,19 +91,30 @@
       "source-layer": "transportation",
       "filter": ["==", ["get", "class"], "motorway"],
       "paint": {
-        "line-color": "#d08c45",
-        "line-width": ["interpolate", ["exponential", 1.2], ["zoom"], 5, 0.5, 20, 18]
+        "line-color": "#ffb759",
+        "line-width": ["interpolate", ["exponential", 1.2], ["zoom"], 5, 0.8, 20, 18]
       }
     },
     {
-      "id": "road_primary_secondary",
+      "id": "road_trunk_primary",
       "type": "line",
       "source": "openmaptiles",
       "source-layer": "transportation",
-      "filter": ["match", ["get", "class"], ["primary", "secondary"], true, false],
+      "filter": ["match", ["get", "class"], ["primary", "trunk"], true, false],
       "paint": {
-        "line-color": "#b68c5a",
-        "line-width": ["interpolate", ["exponential", 1.2], ["zoom"], 7, 0.5, 20, 12]
+        "line-color": "#f3a95f",
+        "line-width": ["interpolate", ["exponential", 1.2], ["zoom"], 5, 0.5, 20, 14]
+      }
+    },
+    {
+      "id": "road_secondary_tertiary",
+      "type": "line",
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "filter": ["match", ["get", "class"], ["secondary", "tertiary"], true, false],
+      "paint": {
+        "line-color": "#3a3a3a",
+        "line-width": ["interpolate", ["exponential", 1.2], ["zoom"], 8, 0.5, 20, 10]
       }
     },
     {
@@ -110,19 +124,20 @@
       "source-layer": "transportation",
       "filter": ["==", ["get", "class"], "minor"],
       "paint": {
-        "line-color": "#5a5a5a",
-        "line-width": ["interpolate", ["exponential", 1.2], ["zoom"], 13, 0.2, 20, 3]
+        "line-color": "#2e2e2e",
+        "line-width": ["interpolate", ["exponential", 1.2], ["zoom"], 13, 0.3, 20, 3]
       }
     },
     {
-      "id": "building",
-      "type": "fill",
+      "id": "road_path",
+      "type": "line",
       "source": "openmaptiles",
-      "source-layer": "building",
-      "minzoom": 13,
+      "source-layer": "transportation",
+      "filter": ["match", ["get", "class"], ["path", "pedestrian"], true, false],
       "paint": {
-        "fill-color": "#2b2b2b",
-        "fill-outline-color": "#3c3c3c"
+        "line-color": "#444",
+        "line-dasharray": [1, 1],
+        "line-width": ["interpolate", ["exponential", 1.2], ["zoom"], 14, 0.5, 20, 3]
       }
     },
     {
@@ -132,8 +147,25 @@
       "source-layer": "boundary",
       "filter": ["==", ["get", "admin_level"], 2],
       "paint": {
-        "line-color": "#444",
+        "line-color": "#3a3a3a",
         "line-width": ["interpolate", ["linear"], ["zoom"], 3, 0.5, 10, 2]
+      }
+    },
+    {
+      "id": "water_label",
+      "type": "symbol",
+      "source": "openmaptiles",
+      "source-layer": "water_name",
+      "layout": {
+        "symbol-placement": "line",
+        "text-field": ["coalesce", ["get", "name_en"], ["get", "name"]],
+        "text-font": ["Noto Sans Italic"],
+        "text-size": 12
+      },
+      "paint": {
+        "text-color": "#93b5e1",
+        "text-halo-color": "#0e1626",
+        "text-halo-width": 1.2
       }
     },
     {
@@ -152,26 +184,9 @@
         "text-size": ["interpolate", ["linear"], ["zoom"], 4, 10, 12, 14]
       },
       "paint": {
-        "text-color": "#d8d8d8",
-        "text-halo-color": "#000",
+        "text-color": "#dadce0",
+        "text-halo-color": "#1a1a1a",
         "text-halo-width": 1.2
-      }
-    },
-    {
-      "id": "water_label",
-      "type": "symbol",
-      "source": "openmaptiles",
-      "source-layer": "water_name",
-      "layout": {
-        "symbol-placement": "line",
-        "text-field": ["coalesce", ["get", "name_en"], ["get", "name"]],
-        "text-font": ["Noto Sans Italic"],
-        "text-size": 12
-      },
-      "paint": {
-        "text-color": "#7ba6d4",
-        "text-halo-color": "#111",
-        "text-halo-width": 1
       }
     }
   ]
