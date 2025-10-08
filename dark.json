@@ -79,6 +79,27 @@
       "paint": { "fill-color": "#01102f" }
     },
     {
+      "id": "water_outline_hide",
+      "type": "line",
+      "source": "openmaptiles",
+      "source-layer": "water",
+      "minzoom": 0,
+      "paint": {
+        "line-color": "#01102f",
+        "line-width": 0
+      }
+    },
+    {
+      "id": "waterway_hide",
+      "type": "line",
+      "source": "openmaptiles",
+      "source-layer": "waterway",
+      "minzoom": 0,
+      "paint": {
+        "line-opacity": 0
+      }
+    },
+    {
       "id": "building",
       "type": "fill",
       "source": "openmaptiles",
