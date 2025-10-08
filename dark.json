@@ -35,7 +35,7 @@
       "source": "openmaptiles",
       "source-layer": "park",
       "paint": {
-        "fill-color": "#263c2c",
+        "fill-color": "#145755",
         "fill-opacity": 0.6
       }
     },
@@ -46,7 +46,7 @@
       "source-layer": "landuse",
       "filter": ["==", ["get", "class"], "residential"],
       "paint": {
-        "fill-color": "#1f1f1f",
+        "fill-color": "#1b2a3f",
         "fill-opacity": 0.6
       }
     },
@@ -64,14 +64,14 @@
       "source": "openmaptiles",
       "source-layer": "landcover",
       "filter": ["==", ["get", "class"], "grass"],
-      "paint": { "fill-color": "#124a57", "fill-opacity": 0.5 }
+      "paint": { "fill-color": "#133848", "fill-opacity": 0.5 }
     },
     {
       "id": "water",
       "type": "fill",
       "source": "openmaptiles",
       "source-layer": "water",
-      "paint": { "fill-color": "#0e1626" }
+      "paint": { "fill-color": "#01102f" }
     },
     {
       "id": "building",
