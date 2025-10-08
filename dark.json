@@ -64,7 +64,7 @@
       "source": "openmaptiles",
       "source-layer": "landcover",
       "filter": ["==", ["get", "class"], "grass"],
-      "paint": { "fill-color": "#213829", "fill-opacity": 0.5 }
+      "paint": { "fill-color": "#124a57", "fill-opacity": 0.5 }
     },
     {
       "id": "water",
@@ -91,7 +91,7 @@
       "source-layer": "transportation",
       "filter": ["==", ["get", "class"], "motorway"],
       "paint": {
-        "line-color": "#ffb759",
+        "line-color": "#405978",
         "line-width": ["interpolate", ["exponential", 1.2], ["zoom"], 5, 0.8, 20, 18]
       }
     },
@@ -102,7 +102,7 @@
       "source-layer": "transportation",
       "filter": ["match", ["get", "class"], ["primary", "trunk"], true, false],
       "paint": {
-        "line-color": "#f3a95f",
+        "line-color": "#405978",
         "line-width": ["interpolate", ["exponential", 1.2], ["zoom"], 5, 0.5, 20, 14]
       }
     },
@@ -113,7 +113,7 @@
       "source-layer": "transportation",
       "filter": ["match", ["get", "class"], ["secondary", "tertiary"], true, false],
       "paint": {
-        "line-color": "#3a3a3a",
+        "line-color": "#405978",
         "line-width": ["interpolate", ["exponential", 1.2], ["zoom"], 8, 0.5, 20, 10]
       }
     },
@@ -124,7 +124,7 @@
       "source-layer": "transportation",
       "filter": ["==", ["get", "class"], "minor"],
       "paint": {
-        "line-color": "#2e2e2e",
+        "line-color": "#405978",
         "line-width": ["interpolate", ["exponential", 1.2], ["zoom"], 13, 0.3, 20, 3]
       }
     },
@@ -135,7 +135,7 @@
       "source-layer": "transportation",
       "filter": ["match", ["get", "class"], ["path", "pedestrian"], true, false],
       "paint": {
-        "line-color": "#444",
+        "line-color": "#405978",
         "line-dasharray": [1, 1],
         "line-width": ["interpolate", ["exponential", 1.2], ["zoom"], 14, 0.5, 20, 3]
       }
