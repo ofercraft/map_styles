@@ -1,12 +1,6 @@
 {
   "version": 8,
   "sources": {
-    "ne2_shaded": {
-      "maxzoom": 6,
-      "tileSize": 256,
-      "tiles": ["https://tiles.openfreemap.org/natural_earth/ne2sr/{z}/{x}/{y}.png"],
-      "type": "raster"
-    },
     "openmaptiles": {
       "type": "vector",
       "url": "https://tiles.openfreemap.org/planet"
@@ -19,15 +13,6 @@
       "id": "background",
       "type": "background",
       "paint": { "background-color": "#2f354b" }
-    },
-    {
-      "id": "natural_earth",
-      "type": "raster",
-      "source": "ne2_shaded",
-      "maxzoom": 7,
-      "paint": {
-        "raster-opacity": ["interpolate", ["exponential", 1.5], ["zoom"], 0, 0.35, 6, 0.05]
-      }
     },
     {
       "id": "park",
