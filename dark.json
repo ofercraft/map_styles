@@ -25,6 +25,28 @@
       }
     },
     {
+      "id": "landcover_desert",
+      "type": "fill",
+      "source": "openmaptiles",
+      "source-layer": "landcover",
+      "filter": ["==", ["get", "class"], "sand"],
+      "paint": {
+        "fill-color": "#2f354b",
+        "fill-opacity": 1
+      }
+    },
+    {
+      "id": "natural_desert",
+      "type": "fill",
+      "source": "openmaptiles",
+      "source-layer": "natural",
+      "filter": ["in", ["get", "class"], ["desert", "bare_rock", "glacier"]],
+      "paint": {
+        "fill-color": "#2f354b",
+        "fill-opacity": 1
+      }
+    },
+    {
       "id": "landuse_residential",
       "type": "fill",
       "source": "openmaptiles",
