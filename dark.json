@@ -152,8 +152,29 @@
       "source-layer": "boundary",
       "filter": ["==", ["get", "admin_level"], 2],
       "paint": {
-        "line-color": "#3a3a3a",
+        "line-color": "#6f7688",
         "line-width": ["interpolate", ["linear"], ["zoom"], 3, 0.5, 10, 2]
+      }
+    },
+    {
+      "id": "landcover_global_green",
+      "type": "fill",
+      "source": "openmaptiles",
+      "source-layer": "landcover",
+      "minzoom": 0,
+      "maxzoom": 7,
+      "filter": ["in", ["get", "class"], ["wood", "forest", "scrub", "grass"]],
+      "paint": {
+        "fill-color": [
+          "match",
+          ["get", "class"],
+          "wood", "#1d3a2f",
+          "forest", "#1d3a2f",
+          "scrub", "#223b33",
+          "grass", "#1f4632",
+          "#2f354b"
+        ],
+        "fill-opacity": ["interpolate", ["linear"], ["zoom"], 0, 0.3, 6, 0.45]
       }
     },
     {
