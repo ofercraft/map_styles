@@ -145,24 +145,6 @@
       }
     },
     {
-      "id": "aeroway_ref",
-      "type": "symbol",
-      "source": "openmaptiles",
-      "source-layer": "aeroway",
-      "filter": ["has", "ref"],
-      "layout": {
-        "text-field": ["get", "ref"],
-        "text-font": ["Noto Sans Bold"],
-        "text-size": ["interpolate", ["linear"], ["zoom"], 12, 10, 15, 14],
-        "text-allow-overlap": true
-      },
-      "paint": {
-        "text-color": "#dee2e8",
-        "text-halo-color": "#2f354b",
-        "text-halo-width": 1.2
-      }
-    },
-    {
       "id": "building",
       "type": "fill",
       "source": "openmaptiles",
