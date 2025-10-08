@@ -18,7 +18,7 @@
     {
       "id": "background",
       "type": "background",
-      "paint": { "background-color": "#202123" }
+      "paint": { "background-color": "#2f354b" }
     },
     {
       "id": "natural_earth",
@@ -56,7 +56,7 @@
       "source": "openmaptiles",
       "source-layer": "landcover",
       "filter": ["==", ["get", "class"], "wood"],
-      "paint": { "fill-color": "#1d3522", "fill-opacity": 0.5 }
+      "paint": { "fill-color": "#133848", "fill-opacity": 0.5 }
     },
     {
       "id": "landcover_grass",
