@@ -126,25 +126,25 @@
       }
     },
     {
-      "id": "aeroway_fill",
-      "type": "fill",
+      "id": "road_label",
+      "type": "symbol",
       "source": "openmaptiles",
-      "source-layer": "aeroway",
-      "filter": [
-        "in",
-        ["get", "class"],
-        ["aerodrome", "heliport", "helipad"]
-      ],
+      "source-layer": "transportation_name",
+      "minzoom": 12,
+      "layout": {
+        "symbol-placement": "line",
+        "text-field": ["coalesce", ["get", "name_en"], ["get", "name"]],
+        "text-font": ["Noto Sans Regular"],
+        "text-size": [
+          "interpolate", ["linear"], ["zoom"],
+          12, 10,
+          16, 14
+        ]
+      },
       "paint": {
-        "fill-color": [
-          "match",
-          ["get", "class"],
-          "aerodrome", "#e6ecf8",
-          "heliport", "#e6ecf8",
-          "helipad", "#e6ecf8",
-          "#f2f5ff"
-        ],
-        "fill-opacity": 0.9
+        "text-color": "#2b2c30",
+        "text-halo-color": "#fcfbf8",
+        "text-halo-width": 1
       }
     },
     {
