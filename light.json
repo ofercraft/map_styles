@@ -148,28 +148,6 @@
       }
     },
     {
-      "id": "runway",
-      "type": "fill",
-      "source": "openmaptiles",
-      "source-layer": "aeroway",
-      "filter": ["==", ["get", "class"], "runway"],
-      "paint": {
-        "fill-color": "#f2f5ff",
-        "fill-opacity": 0.9
-    }
-    },
-    {
-      "id": "taxiway",
-      "type": "fill",
-      "source": "openmaptiles",
-      "source-layer": "aeroway",
-      "filter": ["==", ["get", "class"], "taxiway"],
-      "paint": {
-        "fill-color": "#f2f5ff",
-        "fill-opacity": 0.8
-      }
-    },
-    {
       "id": "building",
       "type": "fill",
       "source": "openmaptiles",
@@ -308,6 +286,43 @@
         "text-color": "#2b2c30",
         "text-halo-color": "#fcfbf8",
         "text-halo-width": 1.2
+      }
+    },
+    {
+      "id": "aeroway_fill",
+      "type": "fill",
+      "source": "openmaptiles",
+      "source-layer": "aeroway",
+      "filter": [
+        "in",
+        ["get", "class"],
+        ["aerodrome", "heliport", "helipad"]
+      ],
+      "paint": {
+        "fill-color": "#e9ecef",
+        "fill-opacity": 1
+      }
+    },
+    {
+      "id": "runway",
+      "type": "fill",
+      "source": "openmaptiles",
+      "source-layer": "aeroway",
+      "filter": ["==", ["get", "class"], "runway"],
+      "paint": {
+        "fill-color": "#dfe3e8",
+        "fill-opacity": 1
+      }
+    },
+    {
+      "id": "taxiway",
+      "type": "fill",
+      "source": "openmaptiles",
+      "source-layer": "aeroway",
+      "filter": ["==", ["get", "class"], "taxiway"],
+      "paint": {
+        "fill-color": "#e7eaee",
+        "fill-opacity": 1
       }
     }
   ]
