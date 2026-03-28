@@ -106,9 +106,13 @@
       "source-layer": "aeroway",
       "minzoom": 12,
       "maxzoom": 17,
-      "filter": ["has", "ref"],
+      "filter": [
+        "all",
+        ["has", "ref"],
+        ["==", ["get", "class"], "aerodrome"]
+      ],
       "layout": {
-        "text-field": ["get", "ref"],
+        "text-field": ["coalesce", ["get", "name_en"], ["get", "name"]],
         "text-font": ["Noto Sans Bold"],
         "text-size": ["interpolate", ["linear"], ["zoom"], 12, 9, 15, 13],
         "text-allow-overlap": false,
@@ -281,7 +285,7 @@
       },
       "paint": {
         "text-color": "#2c91a3",
-        "text-halo-color": "#75c1d5",
+        "text-halo-color": "#7dcde3",
         "text-halo-width": 1.2
       }
     },
