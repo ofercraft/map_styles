@@ -281,7 +281,7 @@
       },
       "paint": {
         "text-color": "#2c91a3",
-        "text-halo-color": "#1d7a8b",
+        "text-halo-color": "#75c1d5",
         "text-halo-width": 1.2
       }
     },
@@ -302,7 +302,7 @@
       },
       "paint": {
         "text-color": "#2b2c30",
-        "text-halo-color": "#1d1d20",
+        "text-halo-color": "#fcfbf8",
         "text-halo-width": 1.2
       }
     }
